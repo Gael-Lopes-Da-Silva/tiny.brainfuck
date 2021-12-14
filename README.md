@@ -1,7 +1,4 @@
-<h3 align="center">Brainfuck</h3>
-<p align="center">
-  <a href="https://gael-lopes-da-silva.github.io/MyPortfolio/">Website</a>
-</p>
+<h3 align="center">Brainfuck interpreter</h3>
 
 ---
 
