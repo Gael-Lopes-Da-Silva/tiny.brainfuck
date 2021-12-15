@@ -2,7 +2,7 @@
 
 ---
 
-<p align="center">⚙️ This is my own implementation of the <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> programming language.</p>
+<p align="center">⚙️ This is my own implementation of the <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> programming language. It can get very slow because I'm currently learning.</p>
 
 ---
 
