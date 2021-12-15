@@ -2,4 +2,12 @@
 
 ---
 
-This is my own implementation of the [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) programming language. I have make it simple and don't used pointers.
+This is my own implementation of the [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) programming language.
+
+---
+
+### TODO
+- [x] implement basic braifuck instructions
+- [ ] implement '[' and ']'
+- [ ] clear some code
+- [ ] try to make a compiler for brainfuck
