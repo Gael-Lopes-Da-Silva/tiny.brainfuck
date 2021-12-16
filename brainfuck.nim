@@ -1,74 +1,100 @@
-import os
+import os, strutils
 
-let paramsList: seq[string] = commandLineParams()
-
-if len(paramsList) == 0:
-  echo "Brainfuck interpreter v0.1\n\nusage: brainfuck [<file>]"
-
-elif len(paramsList) == 1:
-  let source: string = readFile(paramsList[0])
-
+proc interpret(source: string): void =
   var
-    stack: array[30000, int]
-    stackIndex: int = 0
-    sourceIndex: int = 0
+    cells: array[30000, int]
+    cellPtr: int = 0
+    sourcePtr: int = 0
 
-  while sourceIndex != len(source)-1:
-    case source[sourceIndex]
+  while sourcePtr < len(source):
+    case source[sourcePtr]
     of '>':
-      if stackIndex == len(stack)-1: stackIndex = 0
-      else: inc stackIndex
+      if cellPtr == len(cells)-1: cellPtr = 0
+      else: inc cellPtr
 
     of '<':
-      if stackIndex == 0: stackIndex = len(stack)-1
-      else: dec stackIndex
+      if cellPtr == 0: cellPtr = len(cells)-1
+      else: dec cellPtr
 
     of '+':
-      if stack[stackIndex] == 255: stack[stackIndex] = 0
-      else: inc stack[stackIndex]
+      if cells[cellPtr] == 255: cells[cellPtr] = 0
+      else: inc cells[cellPtr]
 
     of '-':
-      if stack[stackIndex] == 0: stack[stackIndex] = 255
-      else: dec stack[stackIndex]
+      if cells[cellPtr] == 0: cells[cellPtr] = 255
+      else: dec cells[cellPtr]
 
     of '.':
-      stdout.write stack[stackIndex].char()
+      stdout.write cells[cellPtr].char()
 
     of ',':
-      stack[stackIndex] = readChar(stdin).int()
+      cells[cellPtr] = readChar(stdin).int()
 
     of '[':
-      if stack[stackIndex] == 0:
+      if cells[cellPtr] == 0:
         var
-          sourceIndexTemp: int = sourceIndex
+          sourcePtrTemp: int = sourcePtr
           count: int = 1
 
-        while true:
-          if count == 0:
-            sourceIndex = sourceIndexTemp
-            break
-          elif sourceIndexTemp == len(source)-1: assert true, "ERROR: matching brackets error"
-
-          inc sourceIndexTemp
-          if source[sourceIndexTemp] == '[': inc count
-          elif source[sourceIndexTemp] == ']': dec count
+        while count != 0:
+          if sourcePtrTemp == len(source)-1:
+            assert true, "ERROR: matching closing brackets error"
+          else:
+            inc sourcePtrTemp
+            if source[sourcePtrTemp] == '[': inc count
+            elif source[sourcePtrTemp] == ']': dec count
+        
+        sourcePtr = sourcePtrTemp
 
     of ']':
-      if stack[stackIndex] != 0:
+      if cells[cellPtr] != 0:
         var
-          sourceIndexTemp: int = sourceIndex
+          sourcePtrTemp: int = sourcePtr
           count: int = 1
 
-        while true:
-          if count == 0:
-            sourceIndex = sourceIndexTemp
-            break
-          elif sourceIndexTemp == 0: assert true, "ERROR: matching brackets error"
-            
-          dec sourceIndexTemp
-          if source[sourceIndexTemp] == '[': dec count
-          elif source[sourceIndexTemp] == ']': inc count
+        while count != 0:
+          if sourcePtrTemp == 0:
+            assert true, "ERROR: matching opening brackets error"
+          else:
+            dec sourcePtrTemp
+            if source[sourcePtrTemp] == '[': dec count
+            elif source[sourcePtrTemp] == ']': inc count
+
+        sourcePtr = sourcePtrTemp
 
     else: discard
+    inc sourcePtr
 
-    inc sourceIndex
+proc compile(source: string): void =
+  discard
+
+proc cleanup(source: seq[string]): string =
+
+  var cleanedSource: string = ""
+  for line in source:
+    if line == "": continue
+    elif line[0] != '#':
+      for character in line:
+        if character in ['>', '<', '+', '-', '.', ',', '[', ']']:
+          if character == '#': break
+          cleanedSource.add(character)
+  
+  return cleanedSource
+
+proc main(paramsList: seq[string]): int =
+  if len(paramsList) == 0:
+    echo "Brainfuck interpreter v0.1\n\nusage: brainfuck [<file>]"
+
+  elif len(paramsList) == 1:
+    echo "You need to specifie the targeted brainfuck file."
+
+  elif len(paramsList) == 2:
+    let source: string = cleanup(readFile(paramsList[1]).splitLines())
+
+    if paramsList[0].toLower() == "int": interpret(source)
+    elif paramsList[0].toLower() == "com": compile(source)
+    elif paramsList[0] == "clr": echo cleanup(readFile(paramsList[1]).splitLines())
+  
+  return 0
+
+assert main(commandLineParams()) == 0, "ERROR: non zero error"
