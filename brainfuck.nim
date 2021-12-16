@@ -2,70 +2,72 @@ import os, strutils
 
 proc interpret(source: string): void =
   var
-    cells: array[30000, int]
-    cellPtr: int = 0
-    sourcePtr: int = 0
+    tape: array[30000, int]
+    cellPtr: int     = 0
+    sourceIndex: int = 0
 
-  while sourcePtr < len(source):
-    case source[sourcePtr]
+  while sourceIndex < len(source):
+    case source[sourceIndex]
     of '>':
-      if cellPtr == len(cells)-1: cellPtr = 0
+      if cellPtr == len(tape)-1: cellPtr = 0
       else: inc cellPtr
 
     of '<':
-      if cellPtr == 0: cellPtr = len(cells)-1
+      if cellPtr == 0: cellPtr = len(tape)-1
       else: dec cellPtr
 
     of '+':
-      if cells[cellPtr] == 255: cells[cellPtr] = 0
-      else: inc cells[cellPtr]
+      if tape[cellPtr] == 255: tape[cellPtr] = 0
+      else: inc tape[cellPtr]
 
     of '-':
-      if cells[cellPtr] == 0: cells[cellPtr] = 255
-      else: dec cells[cellPtr]
+      if tape[cellPtr] == 0: tape[cellPtr] = 255
+      else: dec tape[cellPtr]
 
     of '.':
-      stdout.write cells[cellPtr].char()
+      stdout.write tape[cellPtr].char()
 
     of ',':
-      cells[cellPtr] = readChar(stdin).int()
+      tape[cellPtr] = readChar(stdin).int()
 
     of '[':
-      if cells[cellPtr] == 0:
+      if tape[cellPtr] == 0:
         var
-          sourcePtrTemp: int = sourcePtr
+          sourceIndexTemp: int = sourceIndex
           count: int = 1
 
         while count != 0:
-          if sourcePtrTemp == len(source)-1:
+          if sourceIndexTemp == len(source)-1:
             assert true, "ERROR: matching closing brackets error"
           else:
-            inc sourcePtrTemp
-            if source[sourcePtrTemp] == '[': inc count
-            elif source[sourcePtrTemp] == ']': dec count
+            inc sourceIndexTemp
+            if source[sourceIndexTemp] == '[': inc count
+            elif source[sourceIndexTemp] == ']': dec count
         
-        sourcePtr = sourcePtrTemp
+        sourceIndex = sourceIndexTemp
 
     of ']':
-      if cells[cellPtr] != 0:
+      if tape[cellPtr] != 0:
         var
-          sourcePtrTemp: int = sourcePtr
+          sourceIndexTemp: int = sourceIndex
           count: int = 1
 
         while count != 0:
-          if sourcePtrTemp == 0:
+          if sourceIndexTemp == 0:
             assert true, "ERROR: matching opening brackets error"
           else:
-            dec sourcePtrTemp
-            if source[sourcePtrTemp] == '[': dec count
-            elif source[sourcePtrTemp] == ']': inc count
+            dec sourceIndexTemp
+            if source[sourceIndexTemp] == '[': dec count
+            elif source[sourceIndexTemp] == ']': inc count
 
-        sourcePtr = sourcePtrTemp
+        sourceIndex = sourceIndexTemp
 
     else: discard
-    inc sourcePtr
+    inc sourceIndex
 
 proc compile(source: string): void =
+  # todo: https://igor.io/2014/10/27/compiling-brainfuck.html
+  # todo: https://github.com/igorw/naegleria/blob/master/src/compiler.php
   discard
 
 proc cleanup(source: seq[string]): string =
