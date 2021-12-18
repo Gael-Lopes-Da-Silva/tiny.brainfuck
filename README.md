@@ -6,6 +6,27 @@
 
 ---
 
+### How to use:
+
+~~~shell
+$ brainfuck.exe int [your brainfuck file]
+~~~
+
+~~~shell
+$ brainfuck.exe com [your brainfuck file]
+
+# Then compile the generated assembly
+# nasm
+$
+
+# gcc
+$
+
+# other
+$
+~~~
+
+
 ### TODO
 - [x] implement basic braifuck instructions
 - [x] implement '[' and ']'

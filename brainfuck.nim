@@ -71,16 +71,15 @@ proc compile(source: string): void =
   discard
 
 proc cleanup(source: seq[string]): string =
-
   var cleanedSource: string = ""
   for line in source:
     if line == "": continue
     elif line[0] != '#':
       for character in line:
-        if character in ['>', '<', '+', '-', '.', ',', '[', ']']:
-          if character == '#': break
+        if character == '#': break
+        elif character in ['>', '<', '+', '-', '.', ',', '[', ']']:
           cleanedSource.add(character)
-  
+
   return cleanedSource
 
 proc main(paramsList: seq[string]): int =
@@ -95,7 +94,6 @@ proc main(paramsList: seq[string]): int =
 
     if paramsList[0].toLower() == "int": interpret(source)
     elif paramsList[0].toLower() == "com": compile(source)
-    elif paramsList[0] == "clr": echo cleanup(readFile(paramsList[1]).splitLines())
   
   return 0
 
