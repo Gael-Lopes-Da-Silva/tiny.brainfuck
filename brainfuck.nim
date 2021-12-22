@@ -1,9 +1,47 @@
 import os, strutils
 
+proc cleanSource(source: seq[string]): string
+proc interpret(source: string): void
+proc compile(source: string): void
+
+proc main(paramsList: seq[string]): void =
+  if len(paramsList) == 0:
+    echo "Brainfuck interpreter v0.1\n"
+    echo "usage: brainfuck [<file>]"
+    return
+
+  elif len(paramsList) == 1:
+    echo "You need to specifie the targeted brainfuck file or use int to interpret or com to compile the file."
+    return
+
+  elif len(paramsList) == 2:
+    var file: File
+    if file.open(paramsList[1]):
+      let source: string = cleanSource(readFile(paramsList[1]).splitLines())
+      file.close()
+
+      if paramsList[0].toLower() == "int": interpret(source)
+      elif paramsList[0].toLower() == "com": compile(source)
+    else:
+      echo "ERROR: file cannot be opened"
+      return
+
+proc cleanSource(source: seq[string]): string =
+  var cleanedSource: string = ""
+  for line in source:
+    if line == "": continue
+    elif line[0] != '#':
+      for character in line:
+        if character == '#': break
+        elif character in ['>', '<', '+', '-', '.', ',', '[', ']']:
+          cleanedSource.add(character)
+
+  return cleanedSource
+
 proc interpret(source: string): void =
   var
     tape: array[30000, int]
-    cellPtr: int     = 0
+    cellPtr: int = 0
     sourceIndex: int = 0
 
   while sourceIndex < len(source):
@@ -38,7 +76,8 @@ proc interpret(source: string): void =
 
         while count != 0:
           if sourceIndexTemp == len(source)-1:
-            assert true, "ERROR: matching closing brackets error"
+            echo "ERROR: matching closing brackets error"
+            return
           else:
             inc sourceIndexTemp
             if source[sourceIndexTemp] == '[': inc count
@@ -54,7 +93,8 @@ proc interpret(source: string): void =
 
         while count != 0:
           if sourceIndexTemp == 0:
-            assert true, "ERROR: matching opening brackets error"
+            echo "ERROR: matching opening brackets error"
+            return
           else:
             dec sourceIndexTemp
             if source[sourceIndexTemp] == '[': dec count
@@ -70,31 +110,5 @@ proc compile(source: string): void =
   # todo: https://github.com/igorw/naegleria/blob/master/src/compiler.php
   discard
 
-proc cleanup(source: seq[string]): string =
-  var cleanedSource: string = ""
-  for line in source:
-    if line == "": continue
-    elif line[0] != '#':
-      for character in line:
-        if character == '#': break
-        elif character in ['>', '<', '+', '-', '.', ',', '[', ']']:
-          cleanedSource.add(character)
-
-  return cleanedSource
-
-proc main(paramsList: seq[string]): int =
-  if len(paramsList) == 0:
-    echo "Brainfuck interpreter v0.1\n\nusage: brainfuck [<file>]"
-
-  elif len(paramsList) == 1:
-    echo "You need to specifie the targeted brainfuck file."
-
-  elif len(paramsList) == 2:
-    let source: string = cleanup(readFile(paramsList[1]).splitLines())
-
-    if paramsList[0].toLower() == "int": interpret(source)
-    elif paramsList[0].toLower() == "com": compile(source)
-  
-  return 0
-
-assert main(commandLineParams()) == 0, "ERROR: non zero error"
+if isMainModule:
+  main(commandLineParams())
