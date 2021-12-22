@@ -110,5 +110,5 @@ proc compile(source: string): void =
   # todo: https://github.com/igorw/naegleria/blob/master/src/compiler.php
   discard
 
-if isMainModule:
+when isMainModule:
   main(commandLineParams())
