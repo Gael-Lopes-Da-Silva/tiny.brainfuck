@@ -7,7 +7,7 @@ proc compile(source: string): void
 proc main(paramsList: seq[string]): void =
   if len(paramsList) == 0:
     echo "Brainfuck interpreter v0.1\n"
-    echo "usage: brainfuck [<file>]"
+    echo "usage: brainfuck int/com [<file>]"
     return
 
   elif len(paramsList) == 1:
