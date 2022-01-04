@@ -8,50 +8,7 @@ public static class Brainfuck
   {
     if (Args.Length <= 0)
     {
-      Console.WriteLine("Brainfuck Interpreter v0.2");
-      Console.WriteLine(@"
-Usage: brainfuck.exe yourFile
-
-Tutorial:
-  Tape:
-  _________________________
-  | 0 | 0 | 0 | 0 | 0 | 0 |
-    ^
-
-  > : Move the pointer to the right
-  _________________________
-  | 0 | 0 | 0 | 0 | 0 | 0 |
-        ^
-
-  < : Move the pointer to the left
-  _________________________
-  | 0 | 0 | 0 | 0 | 0 | 0 |
-    ^
-
-  + : Increment the pointed bit
-  _________________________
-  | 1 | 0 | 0 | 0 | 0 | 0 |
-    ^
-
-  - : Decrement the pointed bit
-  _________________________
-  | 0 | 0 | 0 | 0 | 0 | 0 |
-    ^
-
-  . : Show the pointed bit as a character
-  _________________________
-  | 1 | 0 | 0 | 0 | 0 | 0 |
-    ^
-  Output: ☺
-
-  , : Get user input as character and put it in the pointed bit as byte
-  _________________________
-  | 1 | 0 | 0 | 0 | 0 | 0 |
-    ^
-  Output: Enter a character:
-
-  [ : If the pointed bit is 0 move to the closed matching bracket, else continue
-  ] : If the pointed bit is not 0 move to the previous opening matching bracket, else continue");
+      Console.WriteLine("Brainfuck Interpreter v0.2\n\nUsage: brainfuck.exe yourFile");
     }
     else if (Args.Length >= 1)
     {
