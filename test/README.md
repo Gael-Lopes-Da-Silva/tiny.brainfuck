@@ -8,7 +8,6 @@
 
 - [helloWorld](helloWorld.b)
 - [fibonacci numbers](fibonacci.b)
-- [e number](e.b)
 - [golden ratio](golden.b)
 - [sierpinski triangle](sierpinski.b)
 - [number "prettifier"](numwarp.b)
