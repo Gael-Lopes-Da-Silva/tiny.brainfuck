@@ -10,7 +10,7 @@
 
 ---
 
-### How to use:
+### ❓ How to use:
 
 ~~~shell
 $ brainfuck.exe yourFile
