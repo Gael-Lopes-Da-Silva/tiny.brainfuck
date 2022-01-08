@@ -15,3 +15,16 @@
 ~~~shell
 $ brainfuck.exe yourFile
 ~~~
+
+### ❓ How to compile:
+
+First, if you haven't, download the [.NET sdk](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
+
+If you are on windows and don't know how to run build.sh, please download [git](https://git-scm.com/downloads).
+
+~~~shell
+$ bash build.sh
+~~~
+
+Then, you can find the compiled file in bin/Release/net[.net version]/[your os]/publish.
+Just grab the file without the .pdb file.
