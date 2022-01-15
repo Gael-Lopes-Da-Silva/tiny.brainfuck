@@ -2,28 +2,8 @@ using System;
 using System.IO;
 using System.Linq;
 
-public static class Brainfuck
+public class Brainfuck
 {
-  private static void Main(string[] Args)
-  {
-    if (Args.Length <= 0)
-    {
-      Console.WriteLine("Brainfuck Interpreter v0.2\n\nUsage: brainfuck.exe yourFile");
-    }
-    else if (Args.Length >= 1)
-    {
-      try
-      {
-        string Source = CleanSource(File.ReadAllLines(Args[0]));
-        Interpret(Source);
-      }
-      catch (FileNotFoundException)
-      {
-        Console.WriteLine("ERROR: Cannot open the targeted file");
-      }
-    }
-  }
-
   public static string CleanSource(string[] Source)
   {
     string CleanedSource = "";
@@ -198,6 +178,26 @@ public static class Brainfuck
       }
 
       ++SourceIndex;
+    }
+  }
+
+  private static void Main(string[] Args)
+  {
+    if (Args.Length <= 0)
+    {
+      Console.WriteLine("Brainfuck Interpreter v0.2\n\nUsage: brainfuck.exe yourFile");
+    }
+    else if (Args.Length >= 1)
+    {
+      try
+      {
+        string Source = CleanSource(File.ReadAllLines(Args[0]));
+        Interpret(Source);
+      }
+      catch (FileNotFoundException)
+      {
+        Console.WriteLine("ERROR: Cannot open the targeted file");
+      }
     }
   }
 }
