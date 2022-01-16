@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-public class Brainfuck
+static class Brainfuck
 {
   public static string CleanSource(string[] Source)
   {
