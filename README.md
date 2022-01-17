@@ -6,18 +6,19 @@
 
 ---
 
-### ❓ How to use:
+### ❓ How to use
 
 ~~~shell
 $ brainfuck.exe yourFile
 ~~~
 
-### ❓ How to compile:
+### ❓ How to compile
 
 First, if you haven't, download the [.NET sdk](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
 
 If you are on windows and don't know how to run build.sh, please download [git](https://git-scm.com/downloads).
 
+After that, run this command:
 ~~~shell
 $ bash build.sh
 ~~~
