@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using System.Linq;
 
-static class Brainfuck
+public static class Brainfuck
 {
-  public static string CleanSource(string[] Source)
+  private static string CleanSource(string[] Source)
   {
     string CleanedSource = "";
     char[] AllowedCharacter = {'>', '<', '+', '-', '.', ',', '[', ']'};
@@ -34,7 +34,16 @@ static class Brainfuck
     return CleanedSource;
   }
 
-  public static void Interpret(string Source)
+  private static void ThrowError(string Error)
+  {
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.Write("ERROR: ");
+    Console.ResetColor();
+    Console.WriteLine(Error);
+    Environment.Exit(1);
+  }
+
+  private static void Interpret(string Source)
   {
     byte[] Tape = new byte[30000];
     int CellPointer = 0;
@@ -121,8 +130,7 @@ static class Brainfuck
             {
               if (SourceIndexTemp == Source.Length-1)
               {
-                Console.WriteLine("ERROR: Cannot find a matching closing bracket");
-                return;
+                ThrowError("Cannot find a matching closing bracket");
               }
               else
               {
@@ -154,8 +162,7 @@ static class Brainfuck
             {
               if (SourceIndexTemp == 0)
               {
-                Console.WriteLine("ERROR: Cannot find a matching opening bracket");
-                return;
+                ThrowError("Cannot find a matching opening bracket");
               }
               else
               {
@@ -181,11 +188,15 @@ static class Brainfuck
     }
   }
 
-  private static void Main(string[] Args)
+  public static void Main(string[] Args)
   {
     if (Args.Length <= 0)
     {
-      Console.WriteLine("Brainfuck Interpreter v0.2\n\nUsage: brainfuck.exe yourFile");
+      Console.WriteLine("Brainfuck Interpreter v0.3\n");
+      Console.ForegroundColor = ConsoleColor.DarkGray;
+      Console.Write("Usage: ");
+      Console.ResetColor();
+      Console.WriteLine("brainfuck.exe [your file path]");
     }
     else if (Args.Length >= 1)
     {
@@ -196,7 +207,7 @@ static class Brainfuck
       }
       catch (FileNotFoundException)
       {
-        Console.WriteLine("ERROR: Cannot open the targeted file");
+        ThrowError("Cannot open the targeted file");
       }
     }
   }
