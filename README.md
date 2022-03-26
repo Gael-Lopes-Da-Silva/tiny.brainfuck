@@ -2,26 +2,21 @@
 
 ---
 
-<p align="center">⚙️ This is my own implementation of the <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> programming language in C#. It can get very slow because I'm currently learning but it's simple.</p>
+<p align="center">⚙️ This is my own implementation of the <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> programming language in Go.</p>
 
 ---
 
 ### ❓ How to use
 
 ~~~shell
-$ brainfuck.exe yourFile
+$ brainfuck.exe [<file path>]
 ~~~
 
 ### ❓ How to compile
 
-First, if you haven't, download the [.NET sdk](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks).
+Download the go compiler [here](https://go.dev/dl/).
 
-If you are on windows and don't know how to run build.sh, please download [git](https://git-scm.com/downloads).
-
-After that, run this command:
+Then run this command:
 ~~~shell
-$ bash build.sh
+$ go build .
 ~~~
-
-Then, you can find the compiled file in bin/Release/net[.net version]/[your os]/publish.
-Just grab the file without the .pdb file.
