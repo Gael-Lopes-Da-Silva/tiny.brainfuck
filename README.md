@@ -2,21 +2,24 @@
 
 ---
 
-<p align="center">⚙️ This is my own implementation of the <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> programming language in Go.</p>
+<p align="center">⚙️ This is my own implementation of the <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> programming language in C#.</p>
 
 ---
 
 ### ❓ How to use
 
 ~~~shell
-$ brainfuck.exe [<file path>]
+$ Brainfuck.exe [<file path>]
+$ Brainfuck.exe --version       # Display the interpreter version
+$ Brainfuck.exe --github        # Display the github repo link
 ~~~
 
-### ❓ How to compile
+### ❓ How to build
 
-Download the go compiler [here](https://go.dev/dl/).
+First install the latest dotnet SDK <a href="https://dotnet.microsoft.com/en-us/download">here</a>.
 
-Then run this command:
+Then run these commands:
 ~~~shell
-$ go build .
+$ dotnet tool install -g dotnet-script
+$ dotnet script ./build.csx
 ~~~
