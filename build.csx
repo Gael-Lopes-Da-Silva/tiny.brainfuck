@@ -38,25 +38,25 @@ void BuildProject()
     {
         if (Environment.Is64BitOperatingSystem)
         {
-            build.StartInfo.Arguments = "publish -c Release -o ./build -r win-x64 --self-contained true -p:PublishTrimmed=true -p:PublishReadyToRun=true -p:PublishSingleFile=true";
+            build.StartInfo.Arguments = "publish -c Release -o ./build -r win-x64 --self-contained true";
         }
         else
         {
-            build.StartInfo.Arguments = "publish -c Release -o ./build -r win-x86 --self-contained true -p:PublishTrimmed=true -p:PublishReadyToRun=true -p:PublishSingleFile=true";
+            build.StartInfo.Arguments = "publish -c Release -o ./build -r win-x86 --self-contained true";
         }
     }
     else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
     {
-        build.StartInfo.Arguments = "publish -c Release -o ./build -r linux-x86 --self-contained true -p:PublishTrimmed=true -p:PublishReadyToRun=true -p:PublishSingleFile=true";
+        build.StartInfo.Arguments = "publish -c Release -o ./build -r linux-x86 --self-contained true";
 
         if (RuntimeInformation.ProcessArchitecture == Architecture.Arm)
         {
-            build.StartInfo.Arguments = "publish -c Release -o ./build -r linux-arm --self-contained true -p:PublishTrimmed=true -p:PublishReadyToRun=true -p:PublishSingleFile=true";
+            build.StartInfo.Arguments = "publish -c Release -o ./build -r linux-arm --self-contained true";
         }
     }
     else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
     {
-        build.StartInfo.Arguments = "publish -c Release -o ./build -r osx-x64 --self-contained true -p:PublishTrimmed=true -p:PublishReadyToRun=true -p:PublishSingleFile=true";
+        build.StartInfo.Arguments = "publish -c Release -o ./build -r osx-x64 --self-contained true";
     }
 
     build.Start();
