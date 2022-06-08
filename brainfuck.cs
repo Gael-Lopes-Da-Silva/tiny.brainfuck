@@ -4,10 +4,6 @@
 @github: https://github.com/Gael-Lopes-Da-Silva/Brainfuck
 */
 
-using System;
-using System.IO;
-using System.Linq;
-
 class Brainfuck
 {
     private static void WriteColoredLine(string type, ConsoleColor color, string message)
