@@ -21,5 +21,5 @@ First install the latest dotnet SDK <a href="https://dotnet.microsoft.com/en-us/
 Then run these commands:
 ~~~shell
 $ dotnet tool install -g dotnet-script
-$ dotnet script ./build.csx
+$ dotnet script ./Source/build.csx
 ~~~
