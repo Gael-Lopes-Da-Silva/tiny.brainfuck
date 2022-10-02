@@ -2,6 +2,7 @@
 @author: Gael Lopes Da Silva
 @project: Brainfuck Interpreter
 @github: https://github.com/Gael-Lopes-Da-Silva/Brainfuck
+@gitlab: https://gitlab.com/Gael-Lopes-Da-Silva/Brainfuck
 */
 
 class Brainfuck
