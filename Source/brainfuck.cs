@@ -5,12 +5,12 @@
 @gitlab: https://gitlab.com/Gael-Lopes-Da-Silva/Brainfuck
 */
 
-class Brainfuck
+public class Brainfuck
 {
     private static void WriteColoredLine(string type, ConsoleColor color, string message)
     {
         Console.ForegroundColor = color;
-        Console.Write(type);
+        Console.Write(type.ToUpper());
         Console.ResetColor();
         Console.WriteLine(message);
     }
@@ -101,12 +101,12 @@ class Brainfuck
                     break;
 
                 case '.':
-                    Console.Write((char) tape[tapePtr]);
+                    Console.Write((char)tape[tapePtr]);
                     break;
 
                 case ',':
                     Console.Write("\nEnter a character: ");
-                    tape[tapePtr] = (byte) Console.ReadKey().KeyChar;
+                    tape[tapePtr] = (byte)Console.ReadKey().KeyChar;
                     Console.Write("\n");
                     break;
 
@@ -193,14 +193,16 @@ class Brainfuck
         {
             switch (args[0])
             {
-                case "--version": case "-v":
+                case "--version":
+                case "-v":
                     Console.WriteLine("v0.4");
                     break;
-                
-                case "--github": case "-g":
+
+                case "--github":
+                case "-g":
                     Console.WriteLine("https://github.com/Gael-Lopes-Da-Silva/Brainfuck");
                     break;
-                
+
                 default:
                     try
                     {
