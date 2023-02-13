@@ -3,7 +3,7 @@
 ---
 
 <p align="center">
-    :gear: This is my own implementation of the [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) programming language in C#.
+    :gear: This is my own implementation of the <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> programming language in C#.
 </p>
 
 ---
