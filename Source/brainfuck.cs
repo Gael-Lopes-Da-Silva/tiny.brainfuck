@@ -5,14 +5,16 @@
 @gitlab: https://gitlab.com/Gael-Lopes-Da-Silva/Brainfuck
 */
 
-public class Brainfuck
+namespace Brainfuck;
+
+public class Interpreter
 {
     private static void WriteColoredLine(string type, ConsoleColor color, string message)
     {
         Console.ForegroundColor = color;
         Console.Write(type.ToUpper());
         Console.ResetColor();
-        Console.WriteLine(message);
+        Console.WriteLine($": {message}");
     }
 
     private static string ParseInput(string[] input)
@@ -120,7 +122,7 @@ public class Brainfuck
                         {
                             if (inputPtrTemp >= input.Length - 1)
                             {
-                                WriteColoredLine("ERROR", ConsoleColor.Red, ": Missing closing bracket");
+                                WriteColoredLine("ERROR", ConsoleColor.Red, "Missing closing bracket");
                                 return;
                             }
                             else
@@ -152,7 +154,7 @@ public class Brainfuck
                         {
                             if (inputPtrTemp <= 0)
                             {
-                                WriteColoredLine("ERROR", ConsoleColor.Red, ": Missing opening bracket");
+                                WriteColoredLine("ERROR", ConsoleColor.Red, "Missing opening bracket");
                                 return;
                             }
                             else
@@ -184,10 +186,10 @@ public class Brainfuck
         if (args.Length <= 0)
         {
             Console.WriteLine("Brainfuck Interpreter\n");
-            WriteColoredLine("USAGE", ConsoleColor.DarkGray, ": brainfuck.exe [<your file>]\n");
+            WriteColoredLine("USAGE", ConsoleColor.DarkGray, "brainfuck.exe [<your file>]\n");
 
-            WriteColoredLine("--version  -v", ConsoleColor.Green, ": Display version");
-            WriteColoredLine("--github   -g", ConsoleColor.Green, ": Give the github link");
+            WriteColoredLine("--version  -v", ConsoleColor.Green, "Display version");
+            WriteColoredLine("--github   -g", ConsoleColor.Green, "Give the github link");
         }
         else if (args.Length >= 1)
         {
@@ -211,7 +213,7 @@ public class Brainfuck
                     }
                     catch (FileNotFoundException)
                     {
-                        WriteColoredLine("ERROR", ConsoleColor.Red, $": Cannot open '{args[0]}'");
+                        WriteColoredLine("ERROR", ConsoleColor.Red, $"Cannot open '{args[0]}'");
                     }
                     break;
             }
