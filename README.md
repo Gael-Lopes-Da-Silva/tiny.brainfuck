@@ -1,4 +1,6 @@
-<h3 align="center">Brainfuck interpreter</h3>
+<h3 align="center">
+    Brainfuck interpreter
+</h3>
 
 ---
 
@@ -9,7 +11,6 @@
 ---
 
 ### :question: How to use
-
 ~~~console
 $ Brainfuck.exe [<file path>]
 $ Brainfuck.exe --version       # Display the interpreter version
@@ -17,7 +18,6 @@ $ Brainfuck.exe --github        # Display the github repo link
 ~~~
 
 ### :question: How to build
-
 The simple way to build the project is to use Visual Studio, you just need to open the sln or csproj file and then make a build or run the project.
 
 <details> <summary>Build manualy</summary>
