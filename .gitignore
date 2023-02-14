@@ -1,6 +1,6 @@
-.vs/
-.vscode/
-
 bin/
 obj/
-Build/
+
+# Visual Studio
+.vs/
+.vscode/

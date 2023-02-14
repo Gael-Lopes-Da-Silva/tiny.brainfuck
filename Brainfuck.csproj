@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <AssemblyName>Brainfuck</AssemblyName>
+        <AssemblyName>brainfuck</AssemblyName>
         <Authors>Gaël Lopes Da Silva</Authors>
         <PackageLicenseFile>../LICENSE</PackageLicenseFile>
         <RepositoryUrl>https://github.com/Gael-Lopes-Da-Silva/Brainfuck</RepositoryUrl>
