@@ -43,4 +43,4 @@ $ dotnet publish -c Release -o ./build -r osx-x64 --self-contained true
 ```
 </details>
 
-If you want to download a build, check the [Build](./Build/) folder.
+If you want to download a build, check the [build](./build/) folder.

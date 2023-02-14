@@ -1,6 +1,5 @@
+# ignore
 bin/
 obj/
-
-# Visual Studio
 .vs/
 .vscode/
