@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>brainfuck</AssemblyName>
+        <Authors>Gaël Lopes Da Silva</Authors>
+        <PackageLicenseFile>../LICENSE</PackageLicenseFile>
+        <RepositoryUrl>https://github.com/Gael-Lopes-Da-Silva/Brainfuck</RepositoryUrl>
+
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DebugType>none</DebugType>
+        <Nullable>enable</Nullable>        
+        <PublishTrimmed>true</PublishTrimmed>
+        <PublishReadyToRun>true</PublishReadyToRun>
+        <PublishSingleFile>true</PublishSingleFile>
+    </PropertyGroup>
+
+</Project>
