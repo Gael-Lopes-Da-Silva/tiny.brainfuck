@@ -1,3 +1,3 @@
-module github.com/gael-lopes-da-silva/brainfuck/v0.5
+module github.com/gael-lopes-da-silva/brainfuck
 
 go 1.20
