@@ -10,7 +10,7 @@
 
 ---
 
-- [helloWorld](helloWorld.b)
+- [hello world](helloWorld.b)
 - [fibonacci numbers](fibonacci.b)
 - [sierpinski triangle](sierpinski.b)
 - [number "prettifier"](numwarp.b)
