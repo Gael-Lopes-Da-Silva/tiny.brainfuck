@@ -5,7 +5,7 @@
 ---
 
 <p align="center">
-    ⚙️ All the exemples come from brainfuck.org. You can find more exemples <a href="http://brainfuck.org/">here</a>. You can also learn more about brainfuck <a href="https://en.wikipedia.org/wiki/Brainfuck">here</a>.
+    :gear: All the exemples come from brainfuck.org. You can find more exemples <a href="http://brainfuck.org/">here</a>. You can also learn more about brainfuck <a href="https://en.wikipedia.org/wiki/Brainfuck">here</a>.
 </p>
 
 ---
