@@ -30,5 +30,5 @@ If you want to build the interpreter from the source, run this.
 ~~~console
 git clone https://github.com/Gael-Lopes-Da-Silva/Brainfuck
 cd Brainfuck
-go buidl .
+go build .
 ~~~
