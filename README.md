@@ -11,7 +11,7 @@
 ---
 
 ### :question: How to use
-~~~console
+~~~
 brainfuck your_file.b
 brainfuck --version    or -v      # Print the interpreter version
 brainfuck --github     or -g      # Give the GitHub link
