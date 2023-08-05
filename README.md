@@ -19,9 +19,9 @@ brainfuck --interpret  or -i      # Input directly a string to interpret
 ~~~
 
 ### :question: How to build
-If you want a build of the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
+To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
 
-If you just want to download a build of the interpreter, run this.
+If you want a precompiled executable, run this.
 ~~~console
 go install github.com/gael-lopes-da-silva/brainfuck
 ~~~
