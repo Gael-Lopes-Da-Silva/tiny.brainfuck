@@ -13,9 +13,9 @@
 ### :question: How to use
 ~~~console
 brainfuck your_file.b
-brainfuck --version    or -v      # Input directly a string to interpret
-brainfuck --github     or -g      # Print the interpreter version
-brainfuck --interpret  or -i      # Give the GitHub link
+brainfuck --version    or -v      # Print the interpreter version
+brainfuck --github     or -g      # Give the GitHub link
+brainfuck --interpret  or -i      # Input directly a string to interpret
 ~~~
 
 ### :question: How to build
