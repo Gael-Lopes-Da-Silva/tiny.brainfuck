@@ -23,7 +23,7 @@ To build the interpreter you will first need to download the Go compiler [here](
 
 If you want a precompiled executable, run this.
 ~~~console
-go install github.com/gael-lopes-da-silva/brainfuck
+go install github.com/gael-lopes-da-silva/brainfuck@latest
 ~~~
 
 If you want to build the interpreter from the source, run this.
