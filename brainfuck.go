@@ -1,3 +1,7 @@
+// @author: Gael Lopes Da Silva
+// @project: Brainfuck
+// @github: https://github.com/Gael-Lopes-Da-Silva/Brainfuck
+
 package main
 
 import (
