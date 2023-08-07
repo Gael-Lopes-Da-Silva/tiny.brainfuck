@@ -4,9 +4,8 @@
 
 ---
 
-<p align="center">
-    :gear: This is my own implementation of the <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> programming language in Go.
-</p>
+> [!NOTE]
+> This is my own implementation of the [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) programming language in Go.
 
 ---
 
@@ -19,7 +18,8 @@ brainfuck --interpret  or -i      # Input directly a string to interpret
 ~~~
 
 ### :question: How to build
-To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
+> [!IMPORTANT]
+> To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
 
 If you want a precompiled executable, run this.
 ~~~console
