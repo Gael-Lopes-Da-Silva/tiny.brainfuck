@@ -5,7 +5,7 @@
 > [!NOTE]
 > This is my own implementation of the [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) programming language in Go.
 
-## :question: How to use
+## ❓ How to use
 ~~~
 brainfuck your_file.b
 brainfuck --version    or -v      # Print the interpreter version
@@ -13,7 +13,7 @@ brainfuck --github     or -g      # Give the GitHub link
 brainfuck --interpret  or -i      # Input directly a string to interpret
 ~~~
 
-## :question: How to build
+## ❓ How to build
 > [!IMPORTANT]
 > To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
 
