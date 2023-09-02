@@ -1,14 +1,11 @@
-<h3 align="center">
+<h1 align="center">
     Some exemples
-</h3>
+</h1>
 
----
+> [!NOTE]
+> All the exemples come from brainfuck.org. You can find more exemples [here](http://brainfuck.org/). You can also learn more about brainfuck [here](https://en.wikipedia.org/wiki/Brainfuck).
 
-<p align="center">
-    :gear: All the exemples come from brainfuck.org. You can find more exemples <a href="http://brainfuck.org/">here</a>. You can also learn more about brainfuck <a href="https://en.wikipedia.org/wiki/Brainfuck">here</a>.
-</p>
-
----
+## 🔗 Links
 
 - [hello world](helloWorld.b)
 - [fibonacci numbers](fibonacci.b)
