@@ -1,9 +1,8 @@
-<h1 align="center">
-    Brainfuck interpreter
-</h1>
+<div align="center">
+	<h1>Brainfuck interpreter</h1>
+</div>
 
-> [!NOTE]
-> This is my own implementation of the [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) programming language in Go.
+### 🗒️ This is my own implementation of the [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) programming language in Go.
 
 ## ❓ How to use
 ~~~
@@ -14,8 +13,7 @@ brainfuck --interpret  or -i      # Input directly a string to interpret
 ~~~
 
 ## ❓ How to build
-> [!IMPORTANT]
-> To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
+### ❗ To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
 
 If you want a precompiled executable, run this.
 ~~~shell
