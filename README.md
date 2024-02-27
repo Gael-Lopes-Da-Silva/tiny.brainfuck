@@ -13,7 +13,7 @@ brainfuck --interpret  or -i      # Input directly a string to interpret
 ~~~
 
 ## ❓ How to build
-### ❗ To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
+#### ❗ To build the interpreter you will first need to download the Go compiler [here](https://go.dev/dl/).
 
 If you want a precompiled executable, run this.
 ~~~shell
