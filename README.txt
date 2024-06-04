@@ -3,6 +3,7 @@
 
 Description
 ------------------------------------------------------------------
+
 This is my own implementation of an interpreter for the
 brainfuck (https://en.wikipedia.org/wiki/Brainfuck) programming
 language in Go.
@@ -10,6 +11,7 @@ language in Go.
 
 Usage
 ------------------------------------------------------------------
+
 brainfuck your_file.b
 brainfuck --version    or -v      # Print the interpreter version
 brainfuck --github     or -g      # Give the GitHub link
@@ -18,6 +20,7 @@ brainfuck --interpret  or -i      # Input directly a string to
 
 Installation
 ------------------------------------------------------------------
+
 To build the interpreter you will first need to download the Go
 compiler here:
 https://go.dev/dl/
