@@ -1,5 +1,8 @@
-                            Brainfuck
-        https://github.com/Gael-Lopes-Da-Silva/Brainfuck
+<div align="center">
+	<h1>Mini Brainfuck</h1>
+    <a href="https://github.com/Gael-Lopes-Da-Silva/mini_brainfuck">https://github.com/Gael-Lopes-Da-Silva/mini_brainfuck</a>
+</div>
+
 
 Description
 ------------------------------------------------------------------
