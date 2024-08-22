@@ -7,7 +7,7 @@
 Description
 ------------------------------------------------------------------
 
-This is my own implementation of an interpreter for the brainfuck (https://en.wikipedia.org/wiki/Brainfuck) programming language in Rust.
+This is my own implementation of an interpreter for the [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) programming language in Rust.
 
 
 Usage
