@@ -25,6 +25,11 @@ fn main() {
             "  -v, --version    Print the interpreter version"
         );
     } else {
+        if args.contains(&"--version".to_string()) || args.contains(&"-v".to_string()) {
+            println!("{}", options::VERSION);
+            return;
+        }
+
         if args.contains(&String::from("--debug")) || args.contains(&String::from("-d")) {
             let mut debug = options::DEBUG.lock().unwrap();
             *debug = true;
@@ -97,9 +102,6 @@ fn main() {
                 }
             }
 
-            return;
-        } else if args.contains(&"--version".to_string()) || args.contains(&"-v".to_string()) {
-            println!("{}", options::VERSION);
             return;
         }
 
