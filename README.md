@@ -1,5 +1,5 @@
 <div align="center">
-	<h2>Mini Brainfuck</h2>
+	<h1>Mini Brainfuck</h1>
     <a href="https://github.com/Gael-Lopes-Da-Silva/mini_brainfuck">https://github.com/Gael-Lopes-Da-Silva/mini_brainfuck</a>
 </div>
 
@@ -24,6 +24,13 @@ USAGE: target/debug/mini_brainfuck --file <filename>
 ~~~
 
 
-Installation
+Build From Source
 ------------------------------------------------------------------
 
+Make sure to have a ready to use installation of rust.
+
+~~~
+git clone https://github.com/Gael-Lopes-Da-Silva/mini_brainfuck.git
+cd mini_brainfuck
+cargo build
+~~~
