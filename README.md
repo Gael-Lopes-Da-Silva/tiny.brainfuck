@@ -27,7 +27,7 @@ USAGE: target/debug/mini_brainfuck --file <filename>
 Build From Source
 ------------------------------------------------------------------
 
-Make sure to have a ready to use installation of rust.
+Make sure to have a ready to use installation of rust. More info [here](https://www.rust-lang.org/tools/install).
 
 ~~~
 git clone https://github.com/Gael-Lopes-Da-Silva/mini_brainfuck.git
