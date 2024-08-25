@@ -9,9 +9,9 @@ assignees: ''
 
 **Informations**
 
-- Extension version:
-- VSCode version: 
-- OS version:
+- App version:
+
+**Description**
 
 **Steps to reproduce**
 
