@@ -14,7 +14,7 @@ Usage
 ------------------------------------------------------------------
 
 ~~~
-USAGE: target/debug/mini_brainfuck --file <filename>
+USAGE: mini_brainfuck --file <filename>
 
   -f, --file       Open a file and interpret it's content
   -i, --interpret  Interpret a given input
