@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "mini_brainfuck"
+name = "tiny_brainfuck"
 version = "0.1.0"

@@ -11,7 +11,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() - 1 == 0 {
-        println!("{FG_GREEN}{}{RESET}\n\n", "Mini.Brainfuck");
+        println!("{FG_GREEN}{}{RESET}\n\n", "Tiny.Brainfuck");
         println!(
             "{FG_BRIGHT_BLACK}{}{RESET}: {} --file <filename>\n",
             "USAGE", args[0]
