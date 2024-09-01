@@ -32,5 +32,5 @@ Make sure to have a ready to use installation of rust. More info [here](https://
 ~~~
 git clone https://github.com/Gael-Lopes-Da-Silva/tiny.brainfuck.git
 cd tiny.brainfuck
-cargo build
+cargo build --release
 ~~~
