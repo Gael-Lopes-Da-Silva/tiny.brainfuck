@@ -6,7 +6,8 @@
 Description
 ------------------------------------------------------------------
 
-All the exemples come from brainfuck.org. You can find more exemples [here](http://brainfuck.org/). You can also learn more about brainfuck [here](https://en.wikipedia.org/wiki/Brainfuck).
+All the exemples come from brainfuck.org. You can find more exemples [here](http://brainfuck.org/).
+You can also learn more about brainfuck [here](https://en.wikipedia.org/wiki/Brainfuck).
 
 
 Links
